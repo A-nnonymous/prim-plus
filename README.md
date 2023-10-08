@@ -59,70 +59,6 @@ Bibtex entries for citation:
 }
 ```
 
-## Repository Structure and Installation
-
-We point out next the repository structure and some important folders and files. 
-All benchmark folders have similar structure to the one shown for BFS. 
-The microbenchmark folder contains eight different microbenchmarks, each with similar folder structure. 
-The repository also includes `run_*.py` scripts to run strong and weak scaling experiments for PrIM benchmarks.
-
-```
-.
-+-- LICENSE
-+-- README.md
-+-- run_strong_full.py
-+-- run_strong_rank.py
-+-- run_weak.py
-+-- BFS/
-|   +-- baselines/
-|	|	+-- cpu/
-|	|	+-- gpu/
-|   +-- data/
-|   +-- dpu/
-|   +-- host/
-|   +-- support/
-|   +-- Makefile
-+-- BS/
-|   +-- ...
-+-- GEMV/
-|   +-- ...
-+-- HST-L/
-|   +-- ...
-+-- HST-S/
-|   +-- ...
-+-- MLP/
-|   +-- ...
-+-- Microbenchmarks/
-|   +-- Arithmetic-Throughput/
-|   +-- CPU-DPU/
-|   +-- MRAM-Latency/
-|   +-- Operational-Intensity/
-|   +-- Random-GUPS/
-|   +-- STREAM/
-|   +-- STRIDED/
-|   +-- WRAM/
-+-- NW/
-|   +-- ...
-+-- RED/
-|   +-- ...
-+-- SCAN-SSA/
-|   +-- ...
-+-- SCAN-RSS/
-|   +-- ...
-+-- SEL/
-|   +-- ...
-+-- SpMV/
-|   +-- ...
-+-- TRNS/
-|   +-- ...
-+-- TS/
-|   +-- ...
-+-- UNI/
-|   +-- ...
-+-- VA/
-|   +-- ...
-```
-
 ### Prerequisites
 
 Running PrIM requires installing the [UPMEM SDK](https://sdk.upmem.com). 
@@ -140,14 +76,6 @@ cd prim-benchmarks
 ## Running PrIM
 
 ### PrIM Benchmarks 
-
-The repository includes scripts to run weak scaling and strong scaling experiments:
-* `run_weak.py`: Weak scaling experiments for 16 PrIM benchmarks using 1 rank of UPMEM DPUs (1 to 64 DPUs).
-* `run_strong_rank.py`: Strong scaling experiments for 16 PrIM benchmarks using 1 rank of UPMEM DPUs (1 to 64 DPUs).
-* `run_strong_full.py`: Strong scaling experiments for 16 PrIM benchmarks using 4 to 32 ranks of UPMEM DPUs (256 to 2048 DPUs).
-
-To use these scripts, update `rootdir` in the beginning of each script. To run weak scaling experiments for BFS or SpMV, update the paths to input files in `run_weak.py`. 
-The scripts save the results in a folder called `profile` inside each benchmark folder.
 
 ```sh
 cd prim-benchmarks
